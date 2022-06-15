@@ -1,0 +1,46 @@
+    Cliente
+    
+    private Cliente crearUnClienteDesdeElForm() {
+        Cliente cliente = new Cliente();
+        // long dni, String apellido, String nombreD, String direccion, String telefono, String contactoA, boolean activo
+        cliente.setDni(Integer.parseInt(jltexto_dni.getText()));
+        cliente.setApellido(jltexto_Apellido2.getText());
+        cliente.setNombreD(jltexto_Nombre.getText());
+        cliente.setDireccion(jltexto_Direccion1.getText());
+        cliente.setTelefono(jltexto_Telefono1.getText());
+        cliente.setContactoA(jltexto_Contacto_Alternativo.getText());
+        cliente.setActivo(true);
+
+        return cliente;
+    }
+
+    private void cargarUnClienteEnElForm(Cliente p_cliente) {
+        jltexto_n_cliente.setText(Integer.toString(p_cliente.getId_cliente()));
+        jltexto_dni.setText(Long.toString(p_cliente.getDni()));
+        jltexto_Apellido2.setText(p_cliente.getApellido());
+        jltexto_Nombre.setText(p_cliente.getNombreD());
+        jltexto_Direccion1.setText(p_cliente.getDireccion());
+        jltexto_Telefono1.setText(p_cliente.getTelefono());
+        jltexto_Contacto_Alternativo.setText(p_cliente.getContactoA());
+        jrbACTIVO.setSelected(p_cliente.getActivo());
+    }
+    
+    
+    Mascota
+    
+        private Mascota crearUnaMascotaDesdeElForm() {
+        Mascota mascota = new Mascota();
+        //String alias, String sexo, String especie, String raza, String color_pelaje, LocalDate fecha_nac, double peso_actual, double peso_promedio, boolean activo, Cliente cliente
+        mascota.setAlias(jltexto_alias1.getText());
+        mascota.setSexo(jltexto_Apellido4.getText());
+        mascota.setEspecie(jltexto_Apellido3.getText());
+        mascota.setRaza(jltexto_Nombre.getText());
+        mascota.setColor_pelaje(jltexto_Apellido2.getText());
+        //mascota.setFecha_nac(jltexto_Direccion1.getText());
+        mascota.setPeso_actual(Double.parseDouble(jltexto_Contacto_Alternativo.getText()));
+        mascota.setPeso_promedio(Double.parseDouble(jltexto_Telefono2.getText()));        
+        mascota.setActivo(true);        
+        //mascota.setCliente((Cliente) new Cliente());
+        
+        return mascota;
+    }
